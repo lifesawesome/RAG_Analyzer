@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": { "value": "westeurope" },
+    "dataResourceGroupName": { "value": "rg-rag-dbx-dev-weu" },
+    "foundryResourceGroupName": { "value": "rg-rag-foundry-dev-weu" },
+    "workspaceName": { "value": "dbw-regulatory-demo-weu" },
+    "projectName": { "value": "regulatory-research-demo" },
+    "modelDeploymentName": { "value": "gpt-4.1" },
+    "foundryUserRoleId": { "value": "53ca6127-db72-4b80-b1b0-d745d6d5456d" }
+  }
+}

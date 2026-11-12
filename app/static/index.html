@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="color-scheme" content="light">
+	<title>Northstar | Regulatory Research</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="/styles.css">
+	<script src="/app.js" defer></script>
+</head>
+<body>
+	<aside class="sidebar">
+		<a class="brand" href="/" aria-label="Northstar research home"><span class="brand-mark">N</span><span>NORTHSTAR<span class="brand-sub">REGULATORY RESEARCH</span></span></a>
+		<div class="workspace-label">WORKSPACE / DEMONSTRATION</div>
+		<nav aria-label="Workspace views">
+			<button class="nav-item active" data-view="research" aria-current="page"><span>01</span> Research</button>
+			<button class="nav-item" data-view="corpus"><span>02</span> Source corpus <span id="nav-count" class="nav-count">0</span></button>
+			<button class="nav-item" data-view="trace"><span>03</span> Execution trace</button>
+		</nav>
+		<section class="pipeline"><h2>PIPELINE STATUS</h2><ol id="pipeline-list"></ol></section>
+		<div class="sidebar-footer"><span class="presenter-dot"></span> Presenter session<span class="footnote">Loopback only / Demo access policy</span></div>
+	</aside>
+	<div class="main-shell">
+		<header class="topbar"><span>Financial risk &amp; compliance</span><span id="mode" class="mode-badge">CONNECTING</span></header>
+		<main>
+			<div class="page-heading"><div><div class="eyebrow">RESEARCH DESK</div><h1 id="page-title">Policy research</h1></div><div class="document-total"><strong id="doc-count">0</strong><span>PDFs ingested</span></div></div>
+			<div id="notice" class="notice" role="status">Loading corpus status.</div>
+			<section id="research-view" class="view">
+				<div class="scope-bar"><span class="scope-label">ACCESS SCOPE</span><span id="tenant">us-commercial</span><span class="scope-divider">/</span><span id="groups">compliance-analysts</span></div>
+				<form id="question-form">
+					<label for="question" class="question-label">Research question</label>
+					<textarea id="question" name="query" rows="3" minlength="3" maxlength="2000" placeholder="What approvals apply to elevated-risk commercial lending?" required></textarea>
+					<div class="query-toolbar"><label class="date-control">AS OF <input id="as-of" type="date" required></label><button id="submit" class="primary-button" type="submit">Run research <span aria-hidden="true">&#8594;</span></button></div>
+				</form>
+				<div class="suggestions" aria-label="Example research questions"><button type="button" data-question="What approvals apply to elevated-risk commercial lending?">Lending approvals</button><button type="button" data-question="How do liquidity coverage and stable funding requirements differ?">Liquidity &amp; stable funding</button><button type="button" data-question="Who owns regulatory change assessments and policy updates?">Regulatory change</button></div>
+				<div id="error" class="error" role="alert" hidden></div>
+				<section class="answer-section" aria-live="polite"><div class="section-heading"><h2>Research result</h2><span id="answer-meta">AWAITING QUERY</span></div><p id="answer" class="answer-text">No research request yet.</p><div id="citation-summary" class="citation-summary"></div></section>
+				<section class="evidence-section"><div class="section-heading"><h2>Supporting evidence <span id="evidence-count" class="count">0</span></h2><button id="trace-shortcut" class="text-button" type="button">View execution trace &#8599;</button></div><div id="evidence-list" class="evidence-list"><div class="empty-state">No passages retrieved.</div></div></section>
+			</section>
+			<section id="corpus-view" class="view" hidden><div class="section-heading"><h2>Authorized source documents</h2><span id="public-count"></span></div><div class="table-scroll"><table><thead><tr><th>DOCUMENT</th><th>SOURCE</th><th>VERSION</th><th>DEMO EFFECTIVE DATE</th><th></th></tr></thead><tbody id="corpus-table"></tbody></table></div></section>
+			<section id="trace-view" class="view" hidden><div class="section-heading"><h2>Application execution trace</h2><span id="trace-request">NO REQUEST</span></div><div id="trace-events" class="trace-events"><div class="empty-state">No operations recorded.</div></div><div class="section-heading receipt-heading"><h3>Request receipt</h3><button id="download-receipt" type="button" class="text-button" disabled>Download receipt</button></div><pre id="raw-response">{}</pre></section>
+		</main>
+		<footer class="main-footer"><span>AZURE DATABRICKS / MICROSOFT FOUNDRY</span><span id="footer-status">Offline rehearsal</span></footer>
+	</div>
+	<dialog id="source-dialog"><div class="dialog-header"><h2 id="source-title">Source document</h2><button id="close-source" type="button" class="text-button">Close &#215;</button></div><div class="source-toolbar"><button id="previous-page" class="text-button" type="button" aria-label="Previous page">&#8592;</button><span id="source-page">PAGE 1</span><button id="next-page" class="text-button" type="button" aria-label="Next page">&#8594;</button><a id="source-download" class="text-button" target="_blank" rel="noopener">Open PDF &#8599;</a></div><div class="source-preview"><p id="source-loading" role="status">Rendering source page.</p><img id="source-image" alt="Rendered source PDF page" hidden></div></dialog>
+</body>
+</html>

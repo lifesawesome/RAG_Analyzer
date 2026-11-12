@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Regulatory demo (offline)",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--host", "127.0.0.1", "--port", "8766"],
+      "cwd": "${workspaceFolder}",
+      "env": {"RAG_MODE": "offline"},
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Regulatory demo (Foundry + Databricks)",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--host", "127.0.0.1", "--port", "8766"],
+      "cwd": "${workspaceFolder}",
+      "env": {"RAG_MODE": "foundry"},
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
